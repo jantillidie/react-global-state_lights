@@ -30,6 +30,13 @@ export default function App({ Component, pageProps }) {
     );
   };
 
+  function turnAllLightsOff() {
+    setLights(lights.map((light) => ({ ...light, isOn: false })));
+  }
+
+  function turnAllLightsOn() {
+    setLights(lights.map((light) => ({ ...light, isOn: true })));
+  }
 
   return (
     <Layout>
@@ -39,6 +46,8 @@ export default function App({ Component, pageProps }) {
         lights={lights}
         toggleLight={toggleLight}
         lightsOnCount={lightsOnCount}
+        turnAllLightsOff={turnAllLightsOff}
+        turnAllLightsOn={turnAllLightsOn}
       />
     </Layout>
   );
